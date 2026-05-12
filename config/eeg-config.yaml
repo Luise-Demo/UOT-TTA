@@ -1,0 +1,29 @@
+# eeg-config.yaml
+gpu_index: "0"
+train:
+  lr: 0.001
+  weight_decay: 5e-4
+  sgd_momentum: 0.9
+  min_step: 10000
+log:
+  log_interval: 100
+  test_interval: 500
+  root_dir: D:\vscode_code\UniOT-for-UniDA-main\UniOT-for-UniDA-main\log_path
+test:
+  test_interval: 500
+dataset: "eeg_dataset"
+# 新增 EEG 特定参数
+source_classes: [7, 8, 9]
+target_classes: [7, 8, 9, 10]
+temp: 0.1
+lam: 1.0
+mu: 0.9
+gamma: 0.1
+K: 10
+MQ_size: 1000
+batch_size: 12
+EEG_FEAT_DIM: 256
+feat_dim: 256  # 与 EEG_FEAT_DIM 一致
+data:
+  source_file: D:\vscode_code\UniOT-for-UniDA-main\UniOT-for-UniDA-main\A01T_A08T.npz
+  target_file: D:\vscode_code\UniOT-for-UniDA-main\UniOT-for-UniDA-main\A09T.npz
